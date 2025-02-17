@@ -719,9 +719,9 @@ section,
 }
 
 /*--------------------------------------------------------------
-# education Section
+# Resume Section
 --------------------------------------------------------------*/
-.education .education-title {
+.resume .resume-title {
   color: var(--heading-color);
   font-size: 26px;
   font-weight: 700;
@@ -729,14 +729,14 @@ section,
   margin-bottom: 20px;
 }
 
-.education .education-item {
+.resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
   border-left: 2px solid var(--accent-color);
   position: relative;
 }
 
-.education .education-item h4 {
+.resume .resume-item h4 {
   line-height: 18px;
   font-size: 18px;
   font-weight: 600;
@@ -745,7 +745,7 @@ section,
   margin-bottom: 10px;
 }
 
-.education .education-item h5 {
+.resume .resume-item h5 {
   font-size: 16px;
   padding: 5px 15px;
   display: inline-block;
@@ -753,19 +753,19 @@ section,
   margin-bottom: 10px;
 }
 
-.education .education-item ul {
+.resume .resume-item ul {
   padding-left: 20px;
 }
 
-.education .education-item ul li {
+.resume .resume-item ul li {
   padding-bottom: 10px;
 }
 
-.education .education-item:last-child {
+.resume .resume-item:last-child {
   padding-bottom: 0;
 }
 
-.education .education-item::before {
+.resume .resume-item::before {
   content: "";
   position: absolute;
   width: 16px;
@@ -946,14 +946,9 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-/* .testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-} */
-
 .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
-  height: 500px; /* Atur tinggi sesuai kebutuhan */
+  overflow: hidden;
 }
 
 .testimonials .testimonial-item {
@@ -963,10 +958,10 @@ section,
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 320px;
-  border-radius: 15%;
+  width: 90px;
+  border-radius: 50%;
   margin: 0 auto;
-} 
+}
 
 .testimonials .testimonial-item h3 {
   font-size: 18px;
@@ -1275,71 +1270,21 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.skill-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.skill-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
-  border-radius: 4px;
-}
-
-.skill-item span {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.portfolio-content {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.portfolio-info {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-}
-
-.portfolio-info h4 {
-  font-size: 14px;
-  margin: 5px 0;
-}
-
-.portfolio-info p {
-  font-size: 12px;
-}
-
-.preview-link, .details-link {
-  color: #fff;
-  margin: 0 5px;
-  font-size: 20px;
-  transition: color 0.3s;
-}
-
-.preview-link:hover, .details-link:hover {
-  color: #ffce00;
-}
-
-.education-item {
+/* .starter-section {
+  /* Add your styles here */
+/* }  */
+.resume-item {
   display: flex;
   align-items: start;
   gap: 20px;
 }
 
-.education-item img {
+.resume-item img {
   max-width: 100px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
   height: auto;
 }
 
-.education-item div {
+.resume-item div {
   flex: 1;
 }
+
