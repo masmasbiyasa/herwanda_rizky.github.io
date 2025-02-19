@@ -455,11 +455,11 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
@@ -1348,6 +1348,7 @@ section,
     grid-template-columns: 1fr; /* 1 kolom pada layar kecil */
   }
 }
+/* Gaya dasar header */
 .header {
   width: 100%;
   height: 60px;
@@ -1361,21 +1362,19 @@ section,
   z-index: 1000;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-.logo h1 {
-  font-size: 20px;
-  margin: 0;
-  font-weight: 700;
-  color: var(--heading-color);
-}
+
+/* Gaya menu desktop */
 .navmenu ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
+
 .navmenu ul li {
   margin: 0 15px;
 }
+
 .navmenu ul li a {
   text-decoration: none;
   color: var(--default-color);
@@ -1384,22 +1383,33 @@ section,
   display: flex;
   align-items: center;
 }
-.navmenu ul li a .navicon {
-  margin-right: 5px;
+
+/* Tombol toggle (hamburger menu) */
+.header-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
 }
-.navmenu ul li a:hover {
-  color: var(--accent-color);
-}
+
 @media (max-width: 768px) {
-  .navmenu {
-      display: none;
-  }
-  .header-toggle {
-      display: block;
-      font-size: 24px;
-      cursor: pointer;
-  }
+    .navmenu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: var(--background-color);
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Saat menu dibuka */
+    .header-show .navmenu {
+        display: flex;
+    }
 }
+
 /* Styling untuk Section About */
 .section-title {
   margin-bottom: 40px;
@@ -1482,6 +1492,16 @@ section,
   .about .content ul li {
       justify-content: flex-start;
   }
+  .about-container img {
+    display: block; /* Agar properti margin bisa bekerja */
+    margin: 0 auto; /* Otomatis membuat gambar ke tengah */
+  }
+  img {
+    display: block; /* Agar bisa diberi margin */
+    margin: 0 auto; /* Pusatkan gambar */
+    max-width: 100%; /* Agar tidak melebihi lebar layar */
+    height: auto; /* Menjaga aspek rasio */
+  }
 }
 .header {
   width: 100%;
@@ -1533,41 +1553,4 @@ section,
   display: none;
 }
 
-/* Responsif: Mode dropdown pada layar kecil */
-@media (max-width: 768px) {
-  .header-toggle {
-      display: block;
-  }
 
-  .navmenu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      background: var(--background-color);
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      flex-direction: column;
-      text-align: center;
-      padding: 15px 0;
-  }
-
-  .navmenu.active {
-      display: flex;
-  }
-
-  .navmenu ul {
-      flex-direction: column;
-      width: 100%;
-  }
-
-  .navmenu ul li {
-      margin: 10px 0;
-  }
-
-  .navmenu ul li a {
-      font-size: 18px;
-      display: block;
-      padding: 10px;
-  }
-}
