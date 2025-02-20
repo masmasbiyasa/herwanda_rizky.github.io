@@ -227,3 +227,10 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+function scrollToSection(id) {
+  const targetElement = document.getElementById(id);
+  if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+      history.replaceState(null, null, window.location.pathname); // Hapus hash dari URL
+  }
+}
