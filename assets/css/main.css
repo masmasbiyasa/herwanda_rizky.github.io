@@ -1292,17 +1292,42 @@ section,
 .resume-item {
   display: flex;
   align-items: start;
-  gap: 40px;
+  gap: 20px; /* Jarak antara gambar dan teks */
 }
 
+/* Gambar tetap kecil di samping */
 .resume-item img {
-  max-width: 100px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
+  max-width: 100px;
   height: auto;
+  display: block;
+  margin: 0;
 }
 
+/* Teks tetap di samping gambar */
 .resume-item div {
   flex: 1;
 }
+
+/* 🔥 Saat layar kecil (mobile), teks turun ke bawah gambar */
+@media (max-width: 768px) {
+  .resume-item {
+    flex-direction: column; /* 🔥 Ubah jadi vertikal */
+    align-items: flex-start; /* 🔥 Pastikan ke kiri */
+  }
+
+  .resume-item img {
+    align-self: flex-start; /* 🔥 Pastikan tetap ke kiri */
+    width: 80px; /* Bisa lebih kecil di mobile */
+    margin-bottom: 10px; /* 🔥 Jarak antara gambar dan teks */
+  }
+
+  .resume-item div {
+    width: 100%; /* 🔥 Agar teks penuh di bawah */
+  }
+}
+
+
+
 
 /* Styling Section Skills */
 /* Styling Section Skills */
