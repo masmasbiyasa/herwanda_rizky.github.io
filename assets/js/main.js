@@ -227,35 +227,37 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+document.addEventListener("DOMContentLoaded", function () {
+  // Sembunyikan semua konten terlebih dahulu
+  document.body.style.display = "none"; 
+
+  // Jika URL memiliki hash (navigasi ke section)
+  if (window.location.hash) {
+      let targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+          setTimeout(() => {
+              targetElement.scrollIntoView({ behavior: "smooth" });
+              document.body.style.display = "block"; // Tampilkan kembali halaman setelah scroll
+          }, 100); // Delay untuk memastikan elemen tersedia
+      }
+  } else {
+      // Jika tidak ada hash, langsung tampilkan halaman
+      document.body.style.display = "block";
+  }
+
+  // Hapus hash dari URL setelah scroll selesai tanpa reload
+  history.replaceState(null, null, window.location.pathname);
+});
+
+// Fungsi untuk navigasi ke section
 function scrollToSection(id) {
   const targetElement = document.getElementById(id);
   if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
-      history.replaceState(null, null, window.location.pathname); // Hapus hash dari URL
+      history.replaceState(null, null, window.location.pathname);
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const allowedReferrers = ["index.html", "linkedin.com", "github.io"];
-  
-  if (document.referrer && !allowedReferrers.some(ref => document.referrer.includes(ref))) {
-      document.body.style.display = "none"; // Sembunyikan halaman jika referrer tidak diizinkan
-  }
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.hash) {
-      document.body.style.display = "none"; // Sembunyikan semua konten
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.hash) {
-      history.replaceState(null, null, window.location.pathname);
-      location.reload();
-  }
-});
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   const headerToggleBtn = document.querySelector('.header-toggle');
