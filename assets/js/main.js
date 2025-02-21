@@ -228,25 +228,23 @@
 
 })();
 document.addEventListener("DOMContentLoaded", function () {
-  // Sembunyikan semua konten terlebih dahulu
-  document.body.style.display = "none"; 
+  // Tampilkan halaman langsung, jangan disembunyikan
+  document.body.style.display = "block";
 
-  // Jika URL memiliki hash (navigasi ke section)
+  // Jika ada hash di URL (navigasi ke section tertentu)
   if (window.location.hash) {
       let targetElement = document.querySelector(window.location.hash);
       if (targetElement) {
           setTimeout(() => {
               targetElement.scrollIntoView({ behavior: "smooth" });
-              document.body.style.display = "block"; // Tampilkan kembali halaman setelah scroll
-          }, 100); // Delay untuk memastikan elemen tersedia
+          }, 100); // Delay agar elemen tersedia
       }
-  } else {
-      // Jika tidak ada hash, langsung tampilkan halaman
-      document.body.style.display = "block";
   }
 
   // Hapus hash dari URL setelah scroll selesai tanpa reload
-  history.replaceState(null, null, window.location.pathname);
+  setTimeout(() => {
+      history.replaceState(null, null, window.location.pathname);
+  }, 500);
 });
 
 // Fungsi untuk navigasi ke section
@@ -257,6 +255,7 @@ function scrollToSection(id) {
       history.replaceState(null, null, window.location.pathname);
   }
 }
+
 
 
 // document.addEventListener("DOMContentLoaded", function () {
