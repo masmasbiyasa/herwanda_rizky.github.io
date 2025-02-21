@@ -221,9 +221,9 @@ h6 {
 
 .header.header-show {
   left: 0;
-}
+}*/
 
-.header .header-toggle {
+/* .header .header-toggle {
   color: var(--contrast-color);
   background-color: var(--accent-color);
   font-size: 22px;
@@ -244,7 +244,7 @@ h6 {
 .header .header-toggle:hover {
   color: var(--contrast-color);
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
-} */
+}  */
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -893,55 +893,55 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services .service-item {
-  position: relative;
+/* Container utama untuk layanan */
+/* Contact Section */
+/* Atur spacing antar item */
+.contact .row {
+  gap: 15px; /* Jarak antar item */
 }
 
-.services .service-item .icon {
-  background: var(--accent-color);
+/* Item kontak tampilan default */
+.contact .info-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  transition: 0.5s;
-  border: 1px solid var(--accent-color);
-  margin-right: 20px;
-}
-
-.services .service-item .icon i {
-  color: var(--contrast-color);
-  font-size: 24px;
-  line-height: 0;
-}
-
-.services .service-item:hover .icon {
+  padding: 8px 12px;
   background: var(--surface-color);
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  text-align: center;
 }
 
-.services .service-item:hover .icon i {
+/* Efek hover */
+.contact .info-item:hover {
+  background: var(--accent-color);
+}
+
+.contact .info-item:hover i {
+  color: #fff;
+}
+
+/* Ikon */
+.contact .info-item i {
+  font-size: 20px;
+  background: var(--background-color);
   color: var(--accent-color);
+  padding: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: 0.3s ease-in-out;
 }
 
-.services .service-item .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
+/* Responsive: agar tetap 1 baris di layar besar */
+@media (min-width: 992px) { 
+  .contact .row {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.services .service-item .title a {
-  color: var(--heading-color);
-}
 
-.services .service-item .title a:hover {
-  color: var(--accent-color);
-}
-
-.services .service-item .description {
-  line-height: 24px;
-  font-size: 14px;
-}
 
 
 /*--------------------------------------------------------------
@@ -1290,35 +1290,43 @@ section,
 }
 
 /* Styling Section Skills */
+/* Styling Section Skills */
 .skills-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Membuat 2 kolom */
-  gap: 30px; /* Menambah jarak antar item, termasuk vertikal dan horizontal */
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 kolom di desktop */
+  gap: 20px; /* Jarak antar item */
+  padding: 10px;
 }
 
+/* Styling Setiap Skill */
 .skill-item {
   display: flex;
-  align-items: center;
+  align-items: center; /* Pusatkan icon & teks */
+  justify-content: center; /* Pusatkan horizontal */
+  text-align: center; /* Pastikan teks ada di tengah */
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px 15px;
+  padding: 15px;
   transition: transform 0.3s ease;
-  margin-bottom: 20px; /* Jarak antara item di bawah */
+  margin-bottom: 15px; /* Jarak antar item */
+  flex-direction: column; /* Agar icon dan teks berada di tengah secara vertikal */
 }
 
+/* Hover Effect */
 .skill-item:hover {
   transform: translateY(-5px);
 }
 
+/* Icon dalam Skill */
 .skill-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   border-radius: 50%;
   background: #f0f0f0;
-  padding: 5px;
-  margin-right: 10px;
+  padding: 10px;
+  margin-bottom: 10px; /* Jarak dengan teks */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
@@ -1327,35 +1335,34 @@ section,
   transform: scale(1.1);
 }
 
+/* Teks */
 .skill-item span {
   font-size: 18px;
   font-weight: 600;
   color: #333;
 }
 
-/* Responsif untuk layar kecil */
+/* 🔹 Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .skills-content {
-    grid-template-columns: repeat(3, 1fr); /* 2 kolom pada layar sedang */
-  }
-
-  .skill-item {
-    width: 100%; /* Full width pada layar kecil */
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
   }
 }
 
 @media (max-width: 480px) {
   .skills-content {
-    grid-template-columns: 1fr; /* 1 kolom pada layar kecil */
+    grid-template-columns: repeat(1, 1fr); /* 1 kolom di layar kecil */
   }
 }
+
 /* Gaya dasar header */
 .header {
   width: 100%;
   height: 60px;
-  background-color: var(--background-color);
+  background-color: var(--background-color, #fff);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   position: fixed;
   top: 0;
@@ -1363,53 +1370,138 @@ section,
   z-index: 1000;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+.header .header-toggle {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
 
-/* Gaya menu desktop */
+.header .header-toggle:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+} 
+
+/* Gaya logo */
+.logo h2 {
+  font-size: 20px;
+  color: var(--default-color, #333);
+  margin: 0;
+}
+
+/* Gaya menu */
+.navmenu {
+  display: flex;
+}
+
 .navmenu ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-}
-
-.navmenu ul li {
-  margin: 0 15px;
+  gap: 15px;
 }
 
 .navmenu ul li a {
   text-decoration: none;
-  color: var(--default-color);
+  color: var(--default-color, #333);
   font-size: 16px;
   transition: 0.3s;
-  display: flex;
-  align-items: center;
+  padding: 10px 15px;
+  display: block;
 }
 
-/* Tombol toggle (hamburger menu) */
+.navmenu ul li a:hover {
+  color: #007bff;
+}
+
+/* Tombol toggle (hamburger) */
 .header-toggle {
   font-size: 24px;
   cursor: pointer;
   display: none;
+  background: none;
+  border: none;
 }
 
+/* Responsive Styling */
 @media (max-width: 768px) {
-    .navmenu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        background: var(--background-color);
-        flex-direction: column;
-        text-align: center;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
+  .header-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    display: block;
+  }
 
-    /* Saat menu dibuka */
-    .header-show .navmenu {
-        display: flex;
-    }
+  .navmenu {
+    display: none; /* Sembunyikan menu awalnya */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--background-color, #fff);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    flex-direction: column;
+    text-align: center;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .navmenu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /*Saat menu dibuka*/
+  .header-show .navmenu {
+    display: flex;
+    max-height: 500px;
+    opacity: 1;
+    overflow: visible;
+  }
 }
+/* Sembunyikan tombol hamburger di atas 768px */
+@media (min-width: 768px) {
+  .header-toggle {
+    display: none !important;
+  }
+}
+
+/* Munculkan tombol hamburger hanya di bawah 768px */
+@media (max-width: 767px) {
+  .header-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    cursor: pointer;
+  }
+}
+
+
 
 /* Styling untuk Section About */
 .section-title {
@@ -1504,20 +1596,6 @@ section,
     height: auto; /* Menjaga aspek rasio */
   }
 }
-.header {
-  width: 100%;
-  height: 60px;
-  background-color: var(--background-color);
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 /* Gaya untuk menu desktop */
 .navmenu ul {
   list-style: none;
@@ -1548,11 +1626,11 @@ section,
 }
 
 /* Tombol toggle (hamburger menu) */
-.header-toggle {
+/* .header-toggle {
   font-size: 24px;
   cursor: pointer;
   display: none;
-}
+} */
 
 .info-wrap {
   display: flex;

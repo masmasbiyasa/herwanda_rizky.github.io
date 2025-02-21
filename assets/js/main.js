@@ -253,3 +253,60 @@ document.addEventListener("DOMContentLoaded", function () {
       location.reload();
   }
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const headerToggleBtn = document.querySelector('.header-toggle');
+//   const header = document.querySelector('#header');
+//   const navMenu = document.querySelector('#navmenu');
+
+//   if (!headerToggleBtn || !header || !navMenu) {
+//       console.error("Elemen header atau tombol toggle tidak ditemukan.");
+//       return;
+//   }
+
+//   function headerToggle() {
+//       header.classList.toggle('header-show');
+//       headerToggleBtn.classList.toggle('bi-list');
+//       headerToggleBtn.classList.toggle('bi-x');
+//   }
+
+//   // Klik tombol hamburger untuk toggle menu
+//   headerToggleBtn.addEventListener('click', function (event) {
+//       event.stopPropagation(); // Cegah event bubbling agar tidak langsung tertutup
+//       headerToggle();
+//   });
+
+//   // Klik menu item untuk menutup menu
+//   document.querySelectorAll('#navmenu a').forEach(navItem => {
+//       navItem.addEventListener('click', function () {
+//           if (header.classList.contains('header-show')) {
+//               header.classList.remove('header-show');
+//               headerToggleBtn.classList.remove('bi-x');
+//               headerToggleBtn.classList.add('bi-list');
+//           }
+//       });
+//   });
+
+//   // Klik di luar menu untuk menutup
+//   document.addEventListener('click', function (event) {
+//       if (!navMenu.contains(event.target) && !headerToggleBtn.contains(event.target)) {
+//           if (header.classList.contains('header-show')) {
+//               header.classList.remove('header-show');
+//               headerToggleBtn.classList.remove('bi-x');
+//               headerToggleBtn.classList.add('bi-list');
+//           }
+//       }
+//   });
+
+//   /**
+//    * Toggle mobile nav dropdowns
+//    */
+//   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(dropdown => {
+//       dropdown.addEventListener('click', function (e) {
+//           e.preventDefault();
+//           this.parentNode.classList.toggle('active');
+//           this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+//           e.stopImmediatePropagation();
+//       });
+//   });
+// });
