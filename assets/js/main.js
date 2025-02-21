@@ -234,3 +234,22 @@ function scrollToSection(id) {
       history.replaceState(null, null, window.location.pathname); // Hapus hash dari URL
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.referrer && !document.referrer.includes("index.html")) {
+      document.body.style.display = "none"; // Sembunyikan seluruh halaman
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.hash) {
+      document.body.style.display = "none"; // Sembunyikan semua konten
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname);
+      location.reload();
+  }
+});
