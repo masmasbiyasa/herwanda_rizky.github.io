@@ -932,6 +932,21 @@ section,
   margin-right: 8px;
   transition: 0.3s ease-in-out;
 }
+/* Kurangi jarak atas Contact */
+/* .contact {
+  padding-top: 10px; /* Biar lebih dekat dengan elemen sebelumnya */
+/*
+
+/* Kurangi jarak bawah judul Contact */
+.contact .section-title {
+  margin-bottom: 5px; /* Sebelumnya mungkin terlalu besar */
+  padding-bottom: 0; /* Hilangkan padding bawah jika ada */
+}
+
+/* Kurangi margin atas container utama */
+.contact .container {
+  margin-top: -10px; /* Tarik container ke atas */
+}
 
 /* Responsive: agar tetap 1 baris di layar besar */
 @media (min-width: 992px) { 
