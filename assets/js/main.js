@@ -236,16 +236,19 @@ function scrollToSection(id) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.referrer && !document.referrer.includes("index.html")) {
-      document.body.style.display = "none"; // Sembunyikan seluruh halaman
+  const allowedReferrers = ["index.html", "linkedin.com", "github.io"];
+  
+  if (document.referrer && !allowedReferrers.some(ref => document.referrer.includes(ref))) {
+      document.body.style.display = "none"; // Sembunyikan halaman jika referrer tidak diizinkan
   }
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   if (window.location.hash) {
-//       document.body.style.display = "none"; // Sembunyikan semua konten
-//   }
-// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.hash) {
+      document.body.style.display = "none"; // Sembunyikan semua konten
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.hash) {
