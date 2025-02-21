@@ -241,11 +241,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.hash) {
-      document.body.style.display = "none"; // Sembunyikan semua konten
-  }
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   if (window.location.hash) {
+//       document.body.style.display = "none"; // Sembunyikan semua konten
+//   }
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.hash) {
